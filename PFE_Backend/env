@@ -1,0 +1,16 @@
+DB_HOST=localhost
+DB_USER=station_app
+DB_PASSWORD=87Eq8384
+DB_NAME=station_service
+PORT=3306
+JWT_SECRET=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZ2VyYW50IiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJNYWhkaSBCZXkiLCJleHAiOjE3NDE5Njc4NDcsImlhdCI6MTc0MTk2Nzg0N30.iBvm4mf6PctaQ1unabVD2ztFN-GO4DYJ1H2VwMbK1gc
+JWT_EXPIRES_IN=1h
+EMAIL_USER=mahdibeyy@gmail.com
+EMAIL_PASS=arhmcywiuwkbklqq
+FRONTEND_URL=http://localhost:4200/CarboTrack
+BASE_URL=http://localhost:3306
+ODOO_URL=http://localhost:8069 
+ODOO_DB=station_service_db           
+ODOO_USER=admin          
+ODOO_PASSWORD=admin 
+ODOO_API_KEY=7e541401a3c315253b3e1cb99bf45a41ac5b2d58            

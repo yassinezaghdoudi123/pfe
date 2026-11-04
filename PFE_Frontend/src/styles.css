@@ -1,0 +1,820 @@
+
+/* Dark mode */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Links */
+body.dark-theme a {
+  color: #90caf9;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-theme .navbar {
+  background-color: #1e1e1e;
+  color: #f5f5f5; /* Light text */
+}
+
+body.dark-theme .navbar a {
+  color: #cfd8dc; /* Light gray-blue */
+}
+
+body.dark-theme .navbar .icon {
+  color: #ffffff;
+}
+
+body.dark-theme .navbar input,
+body.dark-theme .navbar button {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+body.dark-theme #navbar,
+body.dark-theme #navbar #header {
+  background-color: #1e1e1e;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .navbar * {
+  color: #f5f5f5 !important;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #f8f9fa;
+  color: #000000;
+}
+
+body.dark-theme .sidebar {
+  background-color: #2c2c2c;
+  color: #f5f5f5; /* Light text */
+}
+
+body.dark-theme .sidebar a {
+  color: #cfd8dc; /* Light gray-blue */
+}
+
+body.dark-theme .sidebar .icon {
+  color: #ffffff;
+}
+
+/* Sidebar submenu (nav-content) */
+body.dark-theme .sidebar .nav-content a {
+  color: #cfd8dc; /* Light gray-blue for links */
+}
+
+body.dark-theme .sidebar .nav-content a:hover,
+body.dark-theme .sidebar .nav-content a.active {
+  color: #90caf9; /* Highlight color on hover or active */
+}
+
+body.dark-theme .sidebar .nav-content i {
+  color: #ffffff; /* White icons in submenu */
+}
+
+body.dark-theme .sidebar .nav-content li {
+  padding-left: 15px; /* indent submenu */
+}
+
+/* Sidebar visibility */
+.sidebar.hidden {
+  display: none; /* or transform: translateX(-100%); for sliding effect */
+}
+
+.sidebar.visible {
+  display: block; /* or transform: translateX(0); */
+}
+
+/* Collapse */
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
+}
+
+/* Chevron icon rotation */
+.nav-link.collapsed i.ms-auto {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:not(.collapsed) i.ms-auto {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown menus in dark mode */
+body.dark-theme .dropdown-menu {
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+}
+
+/* Transitions */
+body, .navbar, .sidebar {
+  transition: background-color 0.3s ease, color 0.3s ease;
+} 
+body.dark-theme .goog-te-menu2 * {
+  border-color: #444;
+  background-color: #2d2d2d;
+  color: #eee;
+}
+/* Google Translate Styling */
+#google_translate_element {
+  margin-right: 20px;
+}
+
+/* Hide Google branding */
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+/* Light mode styles */
+.goog-te-gadget .goog-te-combo {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Hide the Google logo */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Dark mode styles for the visible selector */
+body.dark-theme .goog-te-gadget .goog-te-combo {
+  border-color: #555;
+  background-color: #2d2d2d;
+  color: #eee;
+}
+
+/* We CANNOT style the dropdown directly, but we can make it more usable */
+/* This affects the container that holds the iframe */
+body.dark-theme .goog-te-menu-frame {
+  /* Add some contrast against dark backgrounds */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* This makes the iframe more visible against dark backgrounds */
+body.dark-theme .goog-te-menu-frame {
+  border: 1px solid #555 !important;
+}
+
+
+/* ================ GLOBAL DARK THEME VARIABLES ================ */
+:root {
+  /* Light mode defaults */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #333333;
+  --border-color: #e0e0e0;
+  /* ... other light mode vars ... */
+}
+
+body.dark-theme {
+  /* Original dark theme variables */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  
+  /* Updated text colors - lighter than before */
+  --text-primary: #f8f9fa;  /* Changed from #f5f5f5 to a brighter white */
+  --text-secondary: #d1d1d1; /* Changed from #b0b0b0 to a lighter gray */
+  
+  /* Other existing variables... */
+  --border-color: #333333;
+  --accent-color: #8ab4f8;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Shared dark/light base styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global component styles that affect multiple components */
+body.dark-theme .card {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-theme .btn-outline-primary {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+/* Dark Mode Fixes - Specific to your dashboard */
+
+/* 1. Fix for currency select visibility */
+body.dark-theme select.form-select {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+body.dark-theme select.form-select option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* 2. Preserve original badge colors (don't change them) */
+/* Remove any existing badge styles for dark theme if present */
+
+/* 3. Fix for card content visibility */
+body.dark-theme .card {
+  background-color: var(--bg-secondary);
+}
+
+body.dark-theme .card-body,
+body.dark-theme .card-title,
+body.dark-theme .card h5,
+body.dark-theme .card h6 {
+  color: var(--text-primary) !important;
+}
+
+/* 4. Fix for info card numbers */
+body.dark-theme .info-card h6 {
+  color: var(--text-primary) !important;
+}
+
+/* 5. Fix for breadcrumb */
+body.dark-theme .breadcrumb-item a {
+  color: var(--accent-color);
+}
+
+body.dark-theme .breadcrumb-item.active {
+  color: var(--text-secondary);
+}
+
+/* 6. Fix for pagetitle */
+body.dark-theme .pagetitle h1,
+body.dark-theme .title-text,
+body.dark-theme .title-main,
+body.dark-theme .title-emphasis {
+  color: var(--text-primary);
+}
+
+/* 7. Fix for form controls (preserving existing styles) */
+body.dark-theme .form-control {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* 8. Fix for tables */
+body.dark-theme .table {
+  color: var(--text-primary);
+  --bs-table-bg: transparent;
+}
+
+body.dark-theme .table-hover tbody tr:hover {
+  --bs-table-accent-bg: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+/* 9. Fix for SVG icons in titles */
+body.dark-theme .title-icon svg path {
+  fill: var(--text-primary);
+}
+
+/* 10. Fix for card icons */
+body.dark-theme .card-icon {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .card-icon i {
+  color: white; /* Keep icons white on dark backgrounds */
+}
+/* Sidebar Dark Mode Fixes */
+body.dark-theme .sidebar {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Nav items */
+body.dark-theme .sidebar .nav-link {
+  color: var(--text-primary);
+}
+
+body.dark-theme .sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+}
+
+/* Dropdown content */
+body.dark-theme .sidebar .nav-content {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--accent-color);
+}
+
+body.dark-theme .sidebar .nav-content a {
+  color: var(--text-secondary);
+  padding-left: 1.5rem;
+}
+
+body.dark-theme .sidebar .nav-content a:hover {
+  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .sidebar .nav-content a.active {
+  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Chevron icons */
+body.dark-theme .sidebar .nav-link i.bi-chevron-down,
+body.dark-theme .sidebar .nav-link i.bi-chevron-up {
+  color: var(--text-primary);
+}
+
+/* Submenu icons */
+body.dark-theme .sidebar .nav-content i.bi {
+  color: var(--text-secondary);
+}
+
+/* Collapse transition */
+body.dark-theme .sidebar .collapse {
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Dark Mode Dropdown List Fix */
+body.dark-theme .sidebar .nav-content {
+  background-color: var(--bg-tertiary); /* Slightly darker than main sidebar */
+  border-left: 2px solid var(--accent-color);
+  margin-left: 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+body.dark-theme .sidebar .nav-content li {
+  padding-left: 15px;
+}
+
+body.dark-theme .sidebar .nav-content a {
+  color: var(--text-secondary) !important;
+  padding: 8px 15px;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+body.dark-theme .sidebar .nav-content a:hover {
+  color: var(--accent-color) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(3px);
+}
+
+body.dark-theme .sidebar .nav-content a.active {
+  color: var(--accent-color) !important;
+  font-weight: 500;
+  background-color: rgba(144, 202, 249, 0.1); /* accent-color with opacity */
+}
+
+body.dark-theme .sidebar .nav-content i.bi {
+  color: var(--text-secondary);
+  margin-right: 8px;
+  font-size: 0.9em;
+}
+
+/* Make sure the dropdown stays visible when open */
+body.dark-theme .sidebar .collapse:not(.show) {
+  display: none;
+}
+
+body.dark-theme .sidebar .collapse.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dark Mode Text Visibility Fixes */
+body.dark-theme .table tbody td {
+  color: #e0e0e0 !important; /* Light gray for better visibility */
+}
+
+/* Specific fixes for user data columns */
+body.dark-theme .table tbody td:nth-child(2), /* Username */
+body.dark-theme .table tbody td:nth-child(3), /* Email */
+body.dark-theme .table tbody td:nth-child(4) { /* Phone */
+  color: #f5f5f5 !important; /* Even brighter white for these critical fields */
+  font-weight: 500; /* Slightly bolder for better readability */
+}
+
+/* Fix for dropdown menu text */
+body.dark-theme .dropdown-menu {
+  background-color: #2d2d2d;
+}
+
+body.dark-theme .dropdown-item {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .dropdown-item:hover {
+  background-color: #3d3d3d;
+  color: #ffffff !important;
+}
+
+/* Fix for pagination text */
+body.dark-theme .page-link {
+  color: #e0e0e0;
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+
+body.dark-theme .page-item.active .page-link {
+  color: #fff;
+  background-color: #90caf9; /* Using your accent color */
+  border-color: #90caf9;
+}
+
+/* Fix for search/filter inputs */
+body.dark-theme .input-group-text {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.dark-theme .form-control {
+  background-color: #2d2d2d !important;
+  color: #f5f5f5 !important;
+  border-color: #444 !important;
+}
+
+/* Fix for table header */
+body.dark-theme .table-dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Fix for user photo placeholder */
+body.dark-theme .default-icon {
+  color: #e0e0e0;
+}
+
+/* Fix for search bar placeholder in dark mode */
+body.dark-theme .form-control::placeholder {
+  color: #a0a0a0 !important; /* Light gray for placeholder */
+  opacity: 1 !important; /* Ensure full visibility */
+}
+
+/* Fix for all input placeholders in dark mode */
+body.dark-theme ::placeholder {
+  color: #a0a0a0 !important;
+  opacity: 1 !important;
+}
+
+/* Additional fix for search icon contrast */
+body.dark-theme .input-group-text.text-muted {
+  color: #a0a0a0 !important; /* Matching placeholder color */
+}
+
+/* Ensure the actual input text remains visible */
+body.dark-theme .form-control {
+  color: #f5f5f5 !important; /* Bright white for input text */
+}
+
+/* Fix for logo visibility in dark mode */
+body.dark-theme .navbar-brand img {
+  /* Option 1: Use a white version of your logo */
+  filter: brightness(0) invert(1); /* Turns black to white */
+  
+  /* Option 2: Or use a specific dark mode logo if available */
+  /* content: url('path/to/your/logo-white.png'); */
+}
+
+/* Alternative if filter doesn't work well with your logo */
+body.dark-theme .navbar-brand img {
+  /* Add white border or glow */
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+}
+
+/* If logo is in the sidebar */
+body.dark-theme .sidebar .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* If logo is SVG, you can also control it via CSS variables */
+body.dark-theme .logo svg path {
+  fill: #ffffff; /* White color for logo */
+}
+
+/* Dark Mode Form Styling */
+body.dark-theme .main {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Breadcrumb */
+body.dark-theme .breadcrumb {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-theme .breadcrumb-item a {
+  color: #90caf9;
+}
+
+body.dark-theme .breadcrumb-item.active {
+  color: #e0e0e0;
+}
+
+body.dark-theme .breadcrumb-item i {
+  color: #e0e0e0;
+}
+
+/* Form Container */
+body.dark-theme form {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333;
+}
+
+/* Form Labels */
+body.dark-theme .form-label {
+  color: #e0e0e0 !important;
+}
+
+/* Form Inputs */
+body.dark-theme .form-control {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+
+body.dark-theme .form-control:focus {
+  border-color: #90caf9;
+  box-shadow: 0 0 0 0.25rem rgba(144, 202, 249, 0.25);
+}
+
+/* Placeholder Text */
+body.dark-theme ::placeholder {
+  color: #a0a0a0 !important;
+  opacity: 1 !important;
+}
+
+/* Select Dropdown */
+
+
+/* Validation Messages */
+body.dark-theme .text-danger {
+  color: #ff6b6b !important;
+}
+
+/* Buttons */
+body.dark-theme .btn-primary {
+  background-color: #90caf9;
+  border-color: #90caf9;
+  color: #121212;
+}
+
+body.dark-theme .btn-secondary {
+  background-color: #666;
+  border-color: #666;
+  color: #fff;
+}
+
+/* Modal */
+body.dark-theme .modal-content {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+body.dark-theme .modal-header {
+  border-bottom-color: #333;
+}
+
+body.dark-theme .modal-footer {
+  border-top-color: #333;
+}
+
+/* Success Box */
+body.dark-theme .success-box {
+  background-color: rgba(46, 125, 50, 0.2);
+  border-color: #2e7d32;
+  color: #e0e0e0;
+}
+
+/* Alert Box */
+body.dark-theme .alert-danger {
+  background-color: rgba(211, 47, 47, 0.2);
+  border-color: #d32f2f;
+  color: #ff6b6b;
+}
+
+/* Back to Top Button */
+body.dark-theme .back-to-top {
+  background-color: #90caf9;
+  color: #121212;
+}
+
+/* Google Translate Overrides */
+#google_translate_element {
+  margin-right: 20px;
+}
+
+/* Hide Google branding */
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+/* Style the visible selector */
+.goog-te-gadget .goog-te-combo {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333; /* Default text color */
+  font-size: 14px;
+}
+
+/* Dark mode selector */
+.dark-theme .goog-te-gadget .goog-te-combo {
+  border-color: #555;
+  background-color: #2d2d2d;
+  color: #ffffff !important; /* White text in dark mode */
+}
+
+/* ===== IFrame Content Styling (Tricky part) ===== */
+/* This uses the fact that Google adds classes to the body */
+body .goog-te-menu-frame {
+  /* This affects the dropdown container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* For dark theme dropdown content */
+body.dark-theme .goog-te-menu-frame {
+  /* Force white background in the dropdown */
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+  border: 1px solid #555 !important;
+}
+
+/* This targets the actual dropdown options */
+body.dark-theme .goog-te-menu2 {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+/* Individual items */
+body.dark-theme .goog-te-menu2-item div,
+body.dark-theme .goog-te-menu2-item:link,
+body.dark-theme .goog-te-menu2-item:visited,
+body.dark-theme .goog-te-menu2-item:active {
+  color: #ffffff !important;
+  background-color: #2d2d2d !important;
+}
+
+/* Hover state */
+body.dark-theme .goog-te-menu2-item:hover {
+  background-color: #3d3d3d !important;
+}
+
+/* Selected item */
+body.dark-theme .goog-te-menu2-item-selected {
+  background-color: #4d4d4d !important;
+}
+
+:root {
+  --bg-color: #fff;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  /* other light mode variables */
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a2e;
+  --text-color: #f8f9fa;
+  --border-color: #2d3138;
+  /* other dark mode variables */
+}
+
+
+.custom-modal {
+  background-color: #fff;
+  color: #212529;
+  border: 1px solid #dee2e6;
+}
+
+.dark-mode .custom-modal {
+  background-color: #26282c;
+  color: #f8f9fa;
+  border: 1px solid #4a5568;
+}
+
+.custom-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .custom-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/* Modal dark mode */
+.modal-content {
+  background-color: #fff;
+  color: #212529;
+}
+
+.dark-mode .modal-content {
+  background-color: #2e2f33;
+  color: #f8f9fa;
+}
+
+.modal-header {
+  border-bottom-color: #dee2e6;
+}
+
+.dark-mode .modal-header {
+  border-bottom-color: #3e3f41;
+}
+
+
+/* Light mode styles (default) */
+.header {
+  background-color: #fff;
+  color: #222428;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/* Dark mode styles */
+.header.dark-mode {
+  background-color: #1a1a2e;
+  color: #f8f9fa;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #232427;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: #fff;
+  color: #212529;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #2d3748;
+  color: #f8f9fa;
+  border-color: #4a5568;
+}
+
+/* Notification items */
+.notification-item {
+  background-color: #fff;
+  color: #212529;
+}
+
+.dark-mode .notification-item {
+  background-color: #2d3748;
+  color: #f8f9fa;
+}
+
+/* Search bar */
+.search-bar input {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.dark-mode .search-bar input {
+  background-color: #4a5568;
+  color: #f8f9fa;
+}
+
+/* Profile dropdown */
+.profile-img, .default-profile-icon {
+  border: 2px solid #dee2e6;
+}
+
+.dark-mode .profile-img, 
+.dark-mode .default-profile-icon {
+  border: 2px solid #2b2d30;
+}
+
+/* Icons */
+.bi {
+  color: #495057;
+}
+
+.dark-mode .bi {
+  color: #e2e8f0;
+}
